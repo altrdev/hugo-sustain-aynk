@@ -2,6 +2,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Bootstrap core JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+{{ $mainjs := resources.Get "js/main.js" | minify | fingerprint "md5" }}
+<script src="{{ $mainjs.Permalink }}"></script>
+
 {{ range .Site.Params.custom_js }}
     {{ $js := resources.Get . | minify | fingerprint "md5" }}
     <script src="{{ $js.Permalink }}"></script>
