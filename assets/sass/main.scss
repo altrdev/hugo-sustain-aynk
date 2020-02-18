@@ -1,6 +1,7 @@
 $main_color: {{ .Site.Params.theme.main_color | default "#ffffff" }};
 $main_color_hover: {{ .Site.Params.theme.main_color_hover | default "#ffffff" }};
 $code_color : {{ .Site.Params.theme.code_color | default "#c7254e" }};
+$code_background_color : {{ .Site.Params.theme.code_background_color | default "#f9f2f4" }};
 
 /* Main page with stikky-footer */
 html, body {
@@ -266,6 +267,7 @@ footer{
 
 code {
   color: $code_color !important;
+  background-color: $code_background_color !important;
 }
 
 
