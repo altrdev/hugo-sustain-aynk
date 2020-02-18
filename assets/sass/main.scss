@@ -1,10 +1,24 @@
+$main_color: {{ .Site.Params.theme.main_color | default "#ffffff" }};
+$main_color_hover: {{ .Site.Params.theme.main_color_hover | default "#ffffff" }};
+$code_color : {{ .Site.Params.theme.code_color | default "#c7254e" }};
+
 /* Main page with stikky-footer */
 html, body {
-  height: 100%;
   background-color: #fff;
   font-family: 'Source Sans Pro', sans-serif;
   /* The html and body elements cannot have any padding or margin. */
-  border-top: 3px solid #27A822;
+}
+
+html{
+  height: 100%;
+}
+
+body{ min-height:100%; padding:0; margin:0; position:relative; }
+
+body::after{ content:''; display:block; height:100px; }
+
+body {
+  border-top: 20px solid $main_color;
 }
 
 /* Wrapper for page content to push down footer */
@@ -12,10 +26,7 @@ html, body {
   padding-bottom: 50px;	
   min-height: 100%;
   height: auto;
-  /* Negative indent footer by its height */
-  margin: 0 auto -65px;
-  /* Pad bottom by footer height */
-  /*padding: 0 0 60px;*/
+  margin-bottom: 20px;
 }
 
 /* Navbar */
@@ -84,23 +95,35 @@ html, body {
 /* Custom page CSS */
 .container {
   width: auto;
-  max-width: 800px;
+  max-width: 900px;
   text-align: center;
 }
-.container .text-muted {
+/*.container .text-muted {
   margin: 20px 0;
-}
+}*/
 .container a {
-  color: #27A822;
+  color: $main_color;
 }
 .container a:hover {
-  color: #267723;
+  color: $main_color_hover;
 }
 .container p img, .img-responsive {
   display: block;
   height: auto;
   margin: 2rem auto;
   max-width: 100%;
+}
+.img-responsive-full {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  width: 100%;
+}
+.img-figcaption {
+  text-align: center;
+  margin-bottom: 25px;
+  background-color:#e1e1e1;
+  border-radius: 0px 0px 10px 10px;
 }
 .panel-default h4 {
   text-align: left;
@@ -116,10 +139,10 @@ html, body {
   font-size: 15px;
 }
 .panel-default h4 a, h5 a {
-  color: #27A822;
+  color: $main_color;
 }
 .panel-default h4 a:hover, h5 a:hover {
-  color: #267723;
+  color: $main_color_hover;
 }
 .panel{
   border-style: none;
@@ -131,7 +154,7 @@ html, body {
 .social-links {
   display: block;
   margin: 0 auto;
-  margin-top: 40px;
+  margin-top: 20px;
   padding: 0px;
   width: 100%;
   text-align: center;
@@ -180,6 +203,10 @@ html, body {
   line-height: 30px;
   font-size: 18px;
 }
+.homepage{
+  line-height: 30px;
+  font-size: 22px;
+}
 
 /* Footer  */
 .footer {
@@ -188,12 +215,65 @@ html, body {
 .text-muted {
 	color: #6b6b6b;
 }
-div.footer{
-  border-bottom: 5px solid #27A822;;
+div.footer {
+  border-bottom: 20px solid $main_color;
 }
-/* Set the fixed height of the footer here */
-/*.footer {
-  height: 50px;
-  padding-bottom: 15px;
-  
-}*/
+.language-switch {
+  height: 21px;
+}
+.nav>li>div {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+}
+#dropdownMenu1 {
+  border-style: hidden;
+  padding: 6px 0px;
+}
+#dropdownMenu1:hover {
+  background-color: transparent;
+}
+#dropdownMenu1:focus {
+  background-color: transparent
+}
+#dropdownMenu1:active {
+  background-color: transparent;
+}
+.g-recaptcha {
+  display: inline-block;
+}
+footer{ 
+  position:absolute; 
+  bottom: 0; 
+  width: 100%; 
+}
+.flag-image {
+  width: 120px;
+}
+.fakeAds {
+  width: 50%;
+  margin: auto;
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+
+.donate-post {
+  padding-top: 30px;
+  color: #9b9b9b;
+  text-align: center;
+  font-size: 14px;
+}
+
+code {
+  color: $code_color !important;
+}
+
+
+@media only screen and (max-width: 500px) {
+  .flag-image {
+    width: 70px;
+  }
+}
+
+@media only screen and (min-width: 500px) {div.mobileBanner{display: none;}div.desktopBanner {display: block;}}
+@media only screen and (max-width: 499px) {div.desktopBanner {display: none;}div.mobileBanner {display: block;}}

@@ -1,11 +1,17 @@
 <footer>
-  <div id="footer">
-    <div class="container">
-      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
-      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+    <div id="footer">
+        <div class="container">
+            <div class="text-muted">
+                {{ partial "ads" . }}
+                {{ partial "social.html" . }}
+                {{ partial "contact/modalContact.html" . }}
+                {{ partial "contact/alertContact.html" . }}
+                <p>Made with ♥ by <a href="{{ .Site.Params.authorAlessandro.Instagram }}"> {{ .Site.Params.authorAlessandro.name }} </a> 
+                and <a href="{{ .Site.Params.authorDenise.Instagram }}"> {{ .Site.Params.authorDenise.name }} </a></p>
+            </div>
+        </div>
     </div>
-  </div>
+    <div class="footer"></div>
 </footer>
-<div class="footer"></div>
 
 {{ partial "js" . }}
