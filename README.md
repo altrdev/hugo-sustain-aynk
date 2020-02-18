@@ -71,3 +71,4 @@ This is a fork of the Hugo theme [Sustain][sustain] by [Nurlan Su][sustain-autho
 
 [sustain]: https://github.com/nurlansu/hugo-sustain
 [sustain-author]: https://github.com/nurlansu
+[zip-archive]: https://github.com/altrdev/hugo-sustain-ayntk/archive/master.zip
