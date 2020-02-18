@@ -13,6 +13,6 @@ min_version = 0.17
 
 # If porting an existing theme
 [original]
-  name = "Sustain AYNTK"
-  homepage = ""
-  repo = "https://github.com/altrdev/hugo-sustain-ayntk"
+  name = "Sustain"
+  homepage = "https://github.com/nurlansu/hugo-sustain"
+  repo = "https://github.com/nurlansu/hugo-sustain"
