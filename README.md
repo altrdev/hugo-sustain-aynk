@@ -63,7 +63,7 @@ This is a fork of the Hugo theme [Sustain][sustain] by [Nurlan Su][sustain-autho
 
 ## License
 <p>
-  <a href="./LICENSE"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/MIT_logo.svg/642px-MIT_logo.svg.png" height="60px"></a>
+  <a href="./LICENSE.md"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/MIT_logo.svg/642px-MIT_logo.svg.png" height="60px"></a>
 </p>
 
 [sustain]: https://github.com/nurlansu/hugo-sustain
