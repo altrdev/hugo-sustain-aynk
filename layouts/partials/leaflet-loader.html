@@ -16,8 +16,7 @@
 <script src="{{ $leafletHugo.Permalink }}"></script>
 
 <!-- Icons -->
-{{ $leafletExtraCss := resources.Get "css/leaflet.extra-markers.min.css" }}
-<link rel="stylesheet" href="{{ $leafletExtraCss.Permalink }}">
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/leaflet.extra-markers.min.css">
 {{ $leafletExtra := resources.Get "js/leaflet.extra-markers.min.js" }}
 <script src="{{ $leafletExtra.Permalink }}"></script>
 
