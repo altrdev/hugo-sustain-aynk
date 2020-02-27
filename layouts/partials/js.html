@@ -7,15 +7,17 @@
 <script src="{{ $mainjs.Permalink }}"></script>
 
 {{ range .Site.Params.custom_js }}
-    {{ $js := resources.Get . | minify | fingerprint "md5" }}
-    <script src="{{ $js.Permalink }}"></script>
+{{ $js := resources.Get . | minify | fingerprint "md5" }}
+<script src="{{ $js.Permalink }}"></script>
 {{ end }}
 
-<script src="{{ .Site.BaseURL }}js/docs.min.js"></script>
+{{ $docsJs := resources.Get "js/docs.min.js" }}
+<script src="{{ $docsJs.Permalink }}"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="{{ .Site.BaseURL }}js/ie10-viewport-bug-workaround.js"></script>
+{{ $ie10Js := resources.Get "js/ie10-viewport-bug-workaround.js" }}
+<script src="{{ $ie10Js.Permalink }}"></script>
 {{- if .Params.highlight -}}
-    {{ "<!-- Syntax highlighting -->" | safeHTML }}
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
+{{ "<!-- Syntax highlighting -->" | safeHTML }}
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 {{ end }}
