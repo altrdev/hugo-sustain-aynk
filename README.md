@@ -11,7 +11,7 @@
 - [About](#about)
 - [License](#license)
 
-  ## Installation
+## Installation
 
 #### With `git`
 
