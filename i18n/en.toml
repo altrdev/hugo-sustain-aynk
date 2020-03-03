@@ -51,3 +51,6 @@ other = "coffee"
 
 [donation-page]
 other = "donate"
+
+[on-top]
+other = "Click to return on the top page"

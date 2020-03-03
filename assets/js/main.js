@@ -1,31 +1,43 @@
 /**
- * Created by fabiomadeira on 25/02/15.
+ * Created by altrdev on 03/03/20.
  */
-// jQuery for page scrolling feature
 
-jQuery(document).ready(function(e) {
-    
+$(document).ready(function(e) {
     language();
-    
-    e(".scroll").click(function(t) {
-        t.preventDefault();
-        e("html,body").animate({
-            scrollTop: e(this.hash).offset().top
-        }, 1e3)
-    })
-    var lang;
-    
+
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 50) {
+            $('#back-to-top').fadeIn();
+        } else {
+            $('#back-to-top').fadeOut();
+        }
+    });
+
+    let button = $('#back-to-top');
+
+    // scroll body to 0px on click
+    button.click(function () {
+        $('#back-to-top').tooltip('hide');
+        $('body,html').animate({
+            scrollTop: 0
+        }, 800);
+        return false;
+    });
+
+    button.tooltip('show');
+
 });
 
 function language() {
+    let lang;
     if (!getCookie("lang")) {
-        lang = navigator.language || navigator.userLanguage;
+        lang = navigator.language.slice(0, 2);
         setCookie("lang", lang, 7);
-    } 
+    }
 
     lang = getCookie("lang");
-    if(lang != document.getElementsByTagName("html")[0].lang) {
-        var languageLink = document.getElementById("translate_page_" + lang).href;
+    if(lang !== document.getElementsByTagName("html")[0].lang) {
+        const languageLink = document.getElementById("translate_page_" + lang).href;
         location.href = languageLink;
     }
 }
@@ -50,29 +62,29 @@ function setLanguage(lang) {
 const processForm = form => {
     const data = new FormData(form)
     fetch('/', {
-      method: 'POST',
-      body: data,
+        method: 'POST',
+        body: data,
     })
-    .then(() => {
-        $('#modalContact').modal('toggle');
-        $("#success-alert").fadeTo(3000, 500).slideUp(500, function(){
-            $("#success-alert").slideUp(500);
-        });
-        form.reset();
-        if(window.grecaptcha) {
-            grecaptcha.reset();
-        }
-    })
-    .catch(error => {
-        $('#modalContact').modal('toggle');
-        $("#error-alert").fadeTo(3000, 500).slideUp(500, function(){
-            $("#error-alert").slideUp(500);
-        });
-        form.reset();
-        if(window.grecaptcha) {
-            grecaptcha.reset();
-        }
-    })
+        .then(() => {
+            $('#modalContact').modal('toggle');
+            $("#success-alert").fadeTo(3000, 500).slideUp(500, function(){
+                $("#success-alert").slideUp(500);
+            });
+            form.reset();
+            if(window.grecaptcha) {
+                grecaptcha.reset();
+            }
+        })
+        .catch(error => {
+            $('#modalContact').modal('toggle');
+            $("#error-alert").fadeTo(3000, 500).slideUp(500, function(){
+                $("#error-alert").slideUp(500);
+            });
+            form.reset();
+            if(window.grecaptcha) {
+                grecaptcha.reset();
+            }
+        })
 }
 
 const contactForm = document.querySelector('.contact-form')
