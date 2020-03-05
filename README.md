@@ -14,6 +14,8 @@
     - [Syntax highlighting](#syntax-highlighting)
     - [Disqus](#disqus)
     - [Google Analytics](#google-analytics)
+    - [Amazon onelink](#amazon-onelink)
+    - [Amazon adv](#amazon-adv)
     - [Ko-fi](#ko-fi)
 - [Front matter](#front-matter)
 - [About](#about)
@@ -132,6 +134,21 @@ To use this feature, uncomment and fill out the `disqusShortname` parameter in `
 ### Google Analytics
 
 To add Google Analytics, simply sign up to [Google Analytics][g-analytics] to obtain your Google Tracking ID, and add this tracking ID to the `googleAnalytics` parameter in `config.toml`.
+
+### Amazon onelink
+
+If you are an amazon affiliate and do you want using onelink, add you instance ID to the `amazon_onelink` parameter in `config.toml`.
+
+### Amazon adv
+
+For use Amazon adv
+To add amazon banners, set the `amazon_ads` parameter in `config.toml` like this:
+
+```toml
+[params.amazon_ads]
+    desktopBanner = "https://rcm-eu.amazon-adsystem.com/..."
+    mobileBanner = "https://rcm-eu.amazon-adsystem.com/..."
+```
 
 ### Ko-fi
 You can add a donation message after a blog post. Fill out the `kofi` parameter in `config.toml` with your ko-fi id.
