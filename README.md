@@ -154,9 +154,19 @@ translationKey: my-article
 
 `date`: file date
 
-`author`: name of author (`params.author[Author name]`) in a `config.toml`. **Accepted values**: `Alessandro`, `Denise` 
+`author`: name of author. You can insert a new name or linking one already set in a `config.toml`. For linking start with this example:
 
-`authorLink`: social link about author. **Accepted values**: `Twitter`, `Instagram`, `Website`
+```toml
+[params.authorOne]
+  name = "Alessandro"
+  fullName = "Alessandro Travi"
+  Website = "https://altr.dev"
+  Twitter = "https://twitter.com/altrdev"
+  Instagram = "https://www.instagram.com/alessandro.travi/"
+```
+In this case, the value is `One`. You must specify the word after `author`
+
+`authorLink`: social link about author. Values must be a key under author params under `config.toml`. In the example above, you can specify `Website`, `Twitter`, `Instagram`
 
 `title`: page title
 
@@ -172,7 +182,7 @@ translationKey: my-article
 
 `image`: main image for page. Useful for social sharing
 
-`markup`: content format; use always `blackfriday`
+`markup`: content format; using `blackfriday` is recommended 
 
 `translationKey`: linking multilanguage page with different name. 
 
