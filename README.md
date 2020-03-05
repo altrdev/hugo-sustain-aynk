@@ -150,6 +150,8 @@ To add amazon banners, set the `amazon_ads` parameter in `config.toml` like this
     mobileBanner = "https://rcm-eu.amazon-adsystem.com/..."
 ```
 
+If you serve Hugo in localhost, fake banner appear.
+
 ### Ko-fi
 You can add a donation message after a blog post. Fill out the `kofi` parameter in `config.toml` with your ko-fi id.
 
