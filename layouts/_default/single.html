@@ -19,8 +19,8 @@
                     </div>
                     <div class="blog-title">
                         <h4>
-                            {{ i18n "prefix-subtitle" }} {{ .Date.Day }} {{ index $data.months (printf "%d" .Date.Month) }} {{ .Date.Year }} 
-                            {{ i18n "suffix-subtitle" }} 
+                            {{ i18n "prefix-subtitle" }} {{ .Date.Day }} {{ index $data.months (printf "%d" .Date.Month) }} {{ .Date.Year }}
+                            {{ i18n "suffix-subtitle" }}
                             {{ if gt (countwords $authorLink) 0 }}
                                 <a href='{{ $authorLink }}' target="_blank">{{ $authorFullName }}</a>
                             {{ else }}
@@ -39,7 +39,9 @@
                         <div class="panel-body">
                             <div class="blogpost">
                                 {{ .Content }}
-                                <p class="donate-post">{{ i18n "prefix-coffee" }} <a href='{{ i18n "donation-page" | absLangURL }}'>{{ i18n "suffix-coffee" }} ☕</a></p>
+                                {{ with .Site.Params.kofi }}
+                                    <p class="donate-post">{{ i18n "prefix-coffee" }} <a href='https://ko-fi.com/{{ . }}' target="_blank">{{ i18n "suffix-coffee" }} ☕</a></p>
+                                {{ end }}
                                 <hr>
                                 <div class="related-posts">
                                     <h5><b>{{ i18n "related-posts" }}</b></h5>
@@ -63,7 +65,7 @@
                         <hr>
                         {{ partial "disqus" . }}
                         <script>
-                            var disqus_config = function () { 
+                            var disqus_config = function () {
                                 this.language = "{{ .Lang }}";
                             };
                         </script>
