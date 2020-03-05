@@ -5,7 +5,7 @@
 
 {{ if .Site.Params.amazon_ads }}
 <div class="ads">
-    {{ if not .Site.IsServer }}
+    {{ if .Site.IsServer }}
     <div class="fakeAds jumbotron">Fake Ads Banner</div>
     {{ else }}
     <div class="desktopBanner">
