@@ -14,6 +14,7 @@
     - [Syntax highlighting](#syntax-highlighting)
     - [Disqus](#disqus)
     - [Google Analytics](#google-analytics)
+    - [Ko-fi](#ko-fi)
 - [Front matter](#front-matter)
 - [About](#about)
 - [License](#license)
@@ -131,6 +132,9 @@ To use this feature, uncomment and fill out the `disqusShortname` parameter in `
 ### Google Analytics
 
 To add Google Analytics, simply sign up to [Google Analytics][g-analytics] to obtain your Google Tracking ID, and add this tracking ID to the `googleAnalytics` parameter in `config.toml`.
+
+### Ko-fi
+You can add a donation message after a blog post. Fill out the `kofi` parameter in `config.toml` with your ko-fi id.
 
 ## Front matter
 `Front matter` example:
