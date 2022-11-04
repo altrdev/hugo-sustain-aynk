@@ -1,5 +1,6 @@
 name = "Sustain-AYNTK"
 license = "MIT"
+theme = "hugo-leaflet"
 licenselink = "https://github.com/altrdev/hugo-sustain-ayntk/blob/master/LICENSE.md"
 description = "Travel blog built with Bootstrap, powered by Hugo"
 homepage = "https://github.com/altrdev/hugo-sustain-ayntk"
